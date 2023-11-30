@@ -27,32 +27,30 @@ RSpec.describe User, type: :model do
     end
 
     it 'recent_posts method returns last 3 posts in descending order' do
-
-        post1= Post.create(
-            title: 'Test Post',
-            author: subject,
-            text: 'This is test post', comments_counter: 0, likes_counter: 0
-          )
-          post2= Post.create(
-            author: subject,
-            title: 'Codding',
-            text: 'Software development is a crucial aspect of the tech industry', comments_counter: 0, likes_counter: 0
-          )
-          post3=Post.create(
-            author: subject,
-            title: 'Nigeria',
-            text: 'Nigeria is a beautiful country to visit', comments_counter: 0, likes_counter: 0
-          )
-          post4= Post.create(
-            author: subject,
-            title: 'Microverse',
-            text: 'Is Microverse really the best tech school out there?', comments_counter: 0, likes_counter: 0
-          )
-      
+      Post.create(
+        title: 'Test Post',
+        author: subject,
+        text: 'This is test post', comments_counter: 0, likes_counter: 0
+      )
+      post2 = Post.create(
+        author: subject,
+        title: 'Codding',
+        text: 'Software development is a crucial aspect of the tech industry', comments_counter: 0, likes_counter: 0
+      )
+      post3 = Post.create(
+        author: subject,
+        title: 'Nigeria',
+        text: 'Nigeria is a beautiful country to visit', comments_counter: 0, likes_counter: 0
+      )
+      post4 = Post.create(
+        author: subject,
+        title: 'Microverse',
+        text: 'Is Microverse really the best tech school out there?', comments_counter: 0, likes_counter: 0
+      )
 
       recent_posts = subject.recent_posts
       expect(recent_posts.size).to eq(3)
-      expect(recent_posts).to eq([post4,post3,post2])
+      expect(recent_posts).to eq([post4, post3, post2])
     end
   end
 end
