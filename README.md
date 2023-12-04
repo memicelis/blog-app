@@ -51,6 +51,10 @@
 - Allow users to add comments to posts
 - Like posts
 - Add users, comments, likes and posts
+- Model specs
+- Model validations
+- Controllers
+- Basic HTML
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -126,8 +130,7 @@ bin/rails rspec spec
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Validation
-- Model specs
+- Controller specs
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
