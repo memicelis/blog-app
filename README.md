@@ -55,6 +55,7 @@
 - Model validations
 - Controllers
 - Basic HTML
+- Controller specs
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -130,7 +131,7 @@ bin/rails rspec spec
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Controller specs
+- Views
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
