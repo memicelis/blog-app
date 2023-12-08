@@ -17,6 +17,11 @@
     <p class="text-sm text-gray-700">No comments yet.</p>
   </div>
 <% end %>
+  <div class="w-full flex justify-between">
+ <%= render partial: 'comments/form', locals: { user: @post.author, post: @post } %>
+
+ <%= render partial: 'likes/form', locals:{user: @post.author, post: @post}%>
+ </div>
 </div>
 </div>
 
