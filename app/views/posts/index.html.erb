@@ -12,6 +12,8 @@
     </div>
   </div>
 
+  <%= link_to "Add new post", new_user_post_path(@user), class:"px-4 py-2 rounded font-bold bg-blue-500 text-white mb-4 hover:bg-blue-700"%>
+
   <% @posts.each do |post| %>
     <div class="w-full bg-blue-200 p-6 rounded-lg shadow-md mb-4 transform hover:-translate-y-1 hover:-translate-x-1 transition-transform duration-200">
       <%= link_to user_post_path(@user, post), class: "flex flex-col" do %>
