@@ -31,7 +31,9 @@
       </div>
     </div>
   <% end %>
+  <div class='flex items-center'>
+  <%== pagy_nav(@pagy, link_extra: 'class="inline-block mx-2 px-3 border rounded-lg bg-white text-blue-500"') if @pagy.pages > 1 %>
+  </div>
 </div>
-
 
 
