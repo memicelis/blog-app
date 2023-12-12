@@ -1,0 +1,6 @@
+<%= form_with model: [@post, Comment.new], url: user_post_comments_path(@user, @post), remote: true do |f| %>
+ <div class="flex gap-2">
+  <div> <%= f.text_field :text, placeholder: 'Add a comment', minlength: 3 %></div>
+ <button class="px-4 py-2 rounded font-bold bg-blue-500 text-white mb-4 w-fit hover:bg-blue-700"><%= f.submit 'Submit' %></button>
+ </div>
+<% end %>
