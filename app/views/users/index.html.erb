@@ -1,8 +1,16 @@
+<div class="fixed top-0 left-0 p-5">
+  <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+</div>
+
 <div class="flex flex-col gap-1 w-full">
 <% @users.each do |user| %>
   <%= link_to user_path(user), class: 'flex gap-4 mb-4 p-2 bg-blue-300 text-black border-2 border-black rounded' do %>
-    <figure class="border border-black h-full">
-    <%= image_tag user.photo, class: 'w-32 h-32 object-fill' %></figure>
+    <figure class="flex border border-black h-full">
+     <% if user.photo? %>
+      <%= image_tag user.photo, class: 'w-32 h-32 object-fill' %>
+    <% else %>
+      <p class="flex items-center justify-center w-32 h-32"></p>
+    <% end %></figure>
     <div class="flex justify-between items-center w-full">
     <div class="text-4xl">
       <%= user.name %>
