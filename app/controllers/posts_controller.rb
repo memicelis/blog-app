@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
     @user = User.find(params[:user_id])
     @pagy, @posts = pagy(@user.posts, items: 2)
@@ -25,10 +26,8 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-
-    if @post.destroy 
-      redirect_to user_posts_path(current_user)
+    if @post.destroy
+      redirect_to user_path(current_user)
     else
       render :new
     end
