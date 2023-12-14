@@ -7,23 +7,33 @@
   </div>
 
   <% if @comments.present? %>
-  <% @comments.each do |comment| %>
-    <div class="w-full bg-gray-100 p-3 rounded-md mb-2">
+   <% @comments.each do |comment| %>
+    <div class="flex justify-between w-full bg-gray-100 p-3 rounded-md mb-2">
       <p class="text-sm text-gray-700"><%= comment.user.name %>: <%= comment.text %></p>
+      <% if can? :destroy, comment%>
+      <div class="text-sm text-red-600">
+      <%= button_to "Delete", user_post_comment_path(@user, @post, comment), method: :delete,form: {data: {turbo_confirm: 'Are you sure?'}}%>
+      </div>
+      <% end %>
     </div>
-  <% end %>
-<% else %>
-  <div class="w-full bg-gray-100 p-3 rounded-md mb-2">
+    <% end %>
+  <% else %>
+   <div class="w-full bg-gray-100 p-3 rounded-md mb-2">
     <p class="text-sm text-gray-700">No comments yet.</p>
-  </div>
-<% end %>
+   </div>
+  <% end %>
   <div class="w-full flex justify-between">
- <%= render partial: 'comments/form', locals: { user: @post.author, post: @post } %>
+   <%= render partial: 'comments/form', locals: { user: @post.author, post: @post } %>
 
- <%= render partial: 'likes/form', locals:{user: @post.author, post: @post}%>
+   <%= render partial: 'likes/form', locals:{user: @post.author, post: @post}%>
+  </div>
+  <% if can? :destroy, @post%>
+   <div class="text-sm bg-red-600 text-white px-4 py-2 rounded-lg">
+      <%= button_to "Delete", user_post_path(@post), method: :delete,form: {data: {turbo_confirm: 'Are you sure?'}}%>
+   </div>
+   <% end %>
  </div>
-</div>
-</div>
+
 
 
 
