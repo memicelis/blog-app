@@ -58,6 +58,11 @@
 - Controller specs
 - Views
 - Forms
+- Integration specs
+- Devise 
+- Authorization
+- API
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -133,7 +138,8 @@ bin/rails rspec spec
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- integration specs
+- Functionality improvements
+- Styling improvements
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
