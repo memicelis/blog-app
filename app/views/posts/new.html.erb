@@ -1,0 +1,11 @@
+<div class="flex flex-col items-start">
+  <h1 class="text-4xl mb-4">Create new post</h1>
+  <%= form_with model: @post, url: user_posts_path do |f| %>
+    <div class="w-full max-w-md flex flex-col space-y-6">
+      <div><%= f.text_field :title, placeholder: "Add title" %></div>
+      <div><%= f.text_area :text, size: "60x10", placeholder: "Add text" %></div>
+      <div class="px-4 py-2 rounded font-bold bg-blue-500 text-white mb-4 w-fit hover:bg-blue-700"><%= f.submit "Add new post" %></div>
+    </div>
+  <% end %>
+</div>
+
