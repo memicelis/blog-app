@@ -50,6 +50,7 @@
 - Display a list of posts
 - Allow users to add comments to posts
 - Like posts
+- Add users, comments, likes and posts
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -125,7 +126,8 @@ bin/rails rspec spec
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Models
+- Validation
+- Model specs
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
